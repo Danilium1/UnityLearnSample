@@ -4,19 +4,23 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1rdTEVSrCcYOjqTJcFCHj46RvnbdJhmQUb3gHMDhVftI/edit?usp=sharing")]
 public class ScalerModule : MonoBehaviour
 {
+    [SerializeField]
     private Vector3 targetScale = new Vector3(2,2,2);
 
+    [SerializeField]
     private float changeSpeed;
 
     private Vector3 defaultScale;
     private Transform myTransform;
+    [SerializeField]
     private bool toDefault;
-
+    
     private void Start()
     {
         myTransform = transform;
         defaultScale = myTransform.localScale;
         toDefault = false;
+        ActivateModule();
     }
 
     public void ActivateModule()
@@ -35,7 +39,7 @@ public class ScalerModule : MonoBehaviour
 
     private IEnumerator ScaleCoroutine(Vector3 target)
     {
-        Vector3 start = myTransform.lossyScale;
+        Vector3 start = myTransform.localScale;
         float t = 0;
         while(t < 1)
         {
