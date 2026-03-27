@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SampleScripDan : MonoBehaviour
+public abstract class SampleScripDan : MonoBehaviour
 {
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,7 @@ public class SampleScripDan : MonoBehaviour
     {
         
     }
+
+    public abstract void Use();
+
 }
